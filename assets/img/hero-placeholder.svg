@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="600" viewBox="0 0 1600 600">
+  <rect width="1600" height="600" fill="#eaf4fb"/>
+  <g transform="translate(60,60)">
+    <rect x="0" y="0" width="1480" height="480" rx="16" fill="#fff" stroke="#cfeaf8" stroke-width="2"/>
+    <text x="740" y="220" font-size="36" font-family="Arial" fill="#0b6fb0" text-anchor="middle">HERO IMAGE PLACEHOLDER</text>
+    <text x="740" y="270" font-size="18" font-family="Arial" fill="#477f9f" text-anchor="middle">Replace /assets/img/hero-placeholder.svg</text>
+  </g>
+</svg>
