@@ -101,6 +101,12 @@ h2 { font-size: 2.5rem; margin-bottom: 40px; color: var(--primary-dark); }
 }
 .impact-card .icon { font-size: 3rem; display: block; margin-bottom: 10px; }
 
+/* Tìm đoạn này trong style.css và sửa giá trị color */
+.impact-card p {
+    color: #0093cb !important; /* Màu xanh dương bạn yêu cầu */
+    font-weight: 500; /* Làm chữ đậm lên một chút cho dễ đọc */
+}
+
 /* Gallery Grid */
 .gallery-grid {
     display: grid;
