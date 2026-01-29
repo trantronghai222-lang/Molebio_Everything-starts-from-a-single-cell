@@ -34,7 +34,6 @@ body { font-family: 'Open Sans', sans-serif; line-height: 1.6; color: var(--dark
 h2 { font-size: 2.5rem; margin-bottom: 40px; color: var(--primary-green); }
 .dark-bg h2 { color: white; }
 
-p { font-size: 2.5rem; margin-bottom: 40px; color: var(--darkest-emerald-green); }
 /* Grid Cards */
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 .card { background: var(--light-yellow); padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; border-bottom: 5px solid var(--accent-green); }
