@@ -83,9 +83,8 @@ h2 { font-size: 2.5rem; margin-bottom: 40px; color: var(--primary-dark); }
 .green-gradient-bg {
     background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 100%) !important;
     padding: 100px 10%;
-    color: white;
+    /* Xóa dòng color: white ở đây để nó không ép tất cả chữ thành màu trắng */
 }
-.white-text { color: white !important; }
 
 /* Thẻ dự án xã hội */
 .impact-card {
@@ -281,4 +280,9 @@ h2 { font-size: 2.5rem; margin-bottom: 40px; color: var(--primary-dark); }
 
 .footer-section h4, .footer-bottom p {
     color: var(--light-green);
+}
+/* Chỉ đích danh đoạn văn trong thẻ dự án để đổi màu */
+.impact-card p {
+    color: #0093cb !important; 
+    font-weight: 600 !important;
 }
