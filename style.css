@@ -4,6 +4,8 @@
     --light-green: #e9f5ea;
     --dark-text: #1a1a1a;
     --white: #ffffff;
+    --darkest-emerald-green: #0A3C30
+    --black: #000000
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
