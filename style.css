@@ -7,11 +7,6 @@
     --white: #ffffff;
 }
 
-.white-text { 
-    color: #ffffff !important; /* Trả về màu trắng cho các dòng giới thiệu chung */
-    opacity: 0.9;
-}
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Open Sans', sans-serif; line-height: 1.6; color: var(--dark-text); scroll-behavior: smooth; }
 
