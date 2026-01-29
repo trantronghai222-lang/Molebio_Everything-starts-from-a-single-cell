@@ -1,84 +1,40 @@
-:root{
-  /* Color theme - change these variables to recolor the site */
-  --accent: #0b6fb0;      /* primary accent color (buttons, highlights) */
-  --accent-2: #0a567f;    /* darker accent for gradients and headings */
-  --bg: #ffffff;
-  --muted: #6b7785;
-  --text: #0b2736;
-  --card-bg: #ffffff;
-  --wrap-max: 1100px;
-  --radius: 10px;
+:root {
+    --primary-green: #2d5a27;
+    --accent-green: #50c878;
+    --light-green: #e9f5ea;
+    --dark-text: #1a1a1a;
+    --white: #ffffff;
 }
 
-/* Basic layout */
-*{box-sizing:border-box}
-body{font-family:Inter, system-ui, Arial, sans-serif; margin:0; background:var(--bg); color:var(--text); line-height:1.55}
-.wrap{max-width:var(--wrap-max); margin:0 auto; padding:28px}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Open Sans', sans-serif; line-height: 1.6; color: var(--dark-text); scroll-behavior: smooth; }
 
-/* Header */
-.site-header{background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:white; padding:28px 0}
-.header-grid{display:grid; grid-template-columns:1fr 420px; gap:18px; align-items:center}
-.site-header h1{margin:0; font-size:28px}
-.subtitle{margin:6px 0 0; opacity:0.95}
-.slogan{margin:10px 0 12px; font-style:italic; opacity:0.95}
-.cta-row{margin-top:12px}
-.btn{display:inline-block; background:white; color:var(--accent); padding:10px 16px; border-radius:8px; text-decoration:none; font-weight:700; margin-right:8px}
-.btn.ghost{background:transparent; color:rgba(255,255,255,0.95); border:1px solid rgba(255,255,255,0.12)}
+/* Navbar */
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 10%; background: var(--white); position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+.logo { font-size: 1.5rem; font-weight: bold; color: var(--primary-green); }
+.nav-links { list-style: none; display: flex; }
+.nav-links li { margin-left: 30px; }
+.nav-links a { text-decoration: none; color: var(--dark-text); font-weight: 600; transition: 0.3s; }
+.nav-links a:hover { color: var(--accent-green); }
 
-/* Hero image */
-.hero-panel{display:flex; justify-content:center; align-items:center}
-.hero-img{width:100%; max-width:420px; border-radius:var(--radius); outline:6px dashed rgba(255,255,255,0.12); background:#fff}
+/* Hero Section */
+.hero { height: 100vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1530026405186-ed1f13917300?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); padding: 0 20px; }
+.hero h1 { font-family: 'Montserrat', sans-serif; font-size: 3.5rem; margin-bottom: 20px; }
+.highlight { color: var(--accent-green); }
+.btn { display: inline-block; padding: 15px 35px; background: var(--accent-green); color: white; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; margin-top: 20px; }
+.btn:hover { background: var(--primary-green); transform: translateY(-5px); }
 
 /* Sections */
-.section{padding:36px 0; border-bottom:1px solid rgba(15,23,42,0.04)}
-.section h2{margin-top:0; color:var(--accent-2)}
-.content{margin-top:12px; background:var(--card-bg); padding:18px; border-radius:10px; box-shadow:0 6px 18px rgba(11,111,176,0.04)}
+.section { padding: 100px 10%; text-align: center; }
+.grey-bg { background: var(--light-green); }
+.dark-bg { background: var(--primary-green); color: white; }
+h2 { font-size: 2.5rem; margin-bottom: 40px; color: var(--primary-green); }
+.dark-bg h2 { color: white; }
 
-/* Project cards */
-.project-cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:12px}
-.card{padding:14px; border-radius:8px; background:linear-gradient(180deg,#fff,#fbfeff); border:1px solid rgba(11,111,176,0.04)}
+/* Grid Cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.card { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; border-bottom: 5px solid var(--accent-green); }
+.card:hover { transform: translateY(-10px); }
 
-/* Achievements stats */
-.stats{display:flex; gap:18px; margin-top:12px; flex-wrap:wrap}
-.stat{background:linear-gradient(180deg,#fff,#fbfeff); padding:14px; border-radius:8px; min-width:140px; text-align:center; border:1px solid rgba(11,111,176,0.04)}
-.count{font-size:28px; font-weight:800; color:var(--accent)}
-.stat-label{font-size:13px; color:var(--muted)}
-
-/* Gallery */
-.gallery-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin-top:12px}
-.gallery-item img{width:100%; border-radius:8px; background:#fffaf0; outline:4px dashed rgba(11,111,176,0.08)}
-
-/* Contact */
-.contact-cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin-top:12px}
-.contact-card{padding:12px; border-radius:8px; border:1px solid rgba(11,111,176,0.04);}
-
-/* Footer */
-.site-footer{background:#f3f6f8; padding:18px 0; margin-top:24px; color:var(--muted)}
-
-/* Responsive */
-@media (max-width:900px){
-  .header-grid{grid-template-columns:1fr}
-}
-
-/* ===== Animations and interactive styles ===== */
-
-/* Respect reduced motion */
-@media (prefers-reduced-motion: reduce){
-  *{animation:none!important; transition:none!important}
-}
-
-/* Fade-in */
-.fade-in{animation:fadeIn 700ms ease-out both}
-@keyframes fadeIn{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
-
-/* Slide-up reveal - will get .in-view added by script.js */
-.slide-up{transform:translateY(18px); opacity:0; transition:transform 520ms cubic-bezier(.2,.9,.2,1), opacity 520ms ease-out}
-.slide-up.in-view{transform:none; opacity:1}
-
-/* Image zoom on hover/focus */
-.img-zoom{transition:transform 360ms ease, box-shadow 360ms ease}
-.img-zoom:hover, .img-zoom:focus{transform:scale(1.03); box-shadow:0 12px 30px rgba(11,111,176,0.10)}
-
-/* small utility */
-.hint{color:var(--muted); margin-top:8px; font-size:14px}
-.muted{color:var(--muted)}
+/* Gallery Placeholder */
+.gallery-placeholder { border: 2px dashed #ccc; padding: 50px; border-radius: 15px; background: #fafafa; }
