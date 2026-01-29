@@ -117,3 +117,71 @@ h2 { font-size: 2.5rem; margin-bottom: 40px; color: var(--primary-green); }
     transition: 0.3s;
 }
 .gallery-item:hover figcaption { transform: translateY(0); }
+/* Tối ưu Logo trên Menu */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    height: 45px; /* Chỉnh độ cao logo cho vừa vặn */
+    width: auto;
+    filter: drop-shadow(0 0 5px rgba(80, 200, 120, 0.3));
+    transition: 0.4s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Hiệu ứng hào quang cho Slogan */
+.hero h1 {
+    font-size: 4rem;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+    letter-spacing: -1px;
+}
+
+.highlight {
+    color: var(--accent-green);
+    position: relative;
+    display: inline-block;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    background: rgba(80, 200, 120, 0.3);
+    bottom: 10px;
+    left: 0;
+    z-index: -1;
+}
+
+/* Container cho Gallery xịn */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px 0;
+}
+
+.gallery-item {
+    aspect-ratio: 1 / 1; /* Làm cho các ô ảnh thành hình vuông đều nhau */
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ảnh tự lấp đầy ô vuông không bị méo */
+    transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.15);
+    filter: brightness(80%);
+}
