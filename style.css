@@ -7,6 +7,11 @@
     --white: #ffffff;
 }
 
+.white-text { 
+    color: #ffffff !important; /* Trả về màu trắng cho các dòng giới thiệu chung */
+    opacity: 0.9;
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Open Sans', sans-serif; line-height: 1.6; color: var(--dark-text); scroll-behavior: smooth; }
 
@@ -96,15 +101,17 @@ h2 { font-size: 2.5rem; margin-bottom: 40px; color: var(--primary-dark); }
     border: 1px solid var(--light-green);
 }
 .impact-card h3 {
-    color: var(--light-green);
+    color: var(--primary-dark) !important;
+    margin-bottom: 10px;
 }
 .impact-card .icon { font-size: 3rem; display: block; margin-bottom: 10px; }
 
 /* Tìm đoạn này trong style.css và sửa giá trị color */
+/* Chỉ đổi màu nội dung chi tiết của Hạn hán và Lũ lụt */
 .impact-card p {
-    color: #0093cb !important; /* Màu xanh dương bạn yêu cầu */
-    font-weight: 500; /* Làm chữ đậm lên một chút cho dễ đọc */
-}
+    color: #0093cb !important; 
+    font-weight: 600 !important;
+    font-size: 1rem;
 
 /* Gallery Grid */
 .gallery-grid {
@@ -282,7 +289,3 @@ h2 { font-size: 2.5rem; margin-bottom: 40px; color: var(--primary-dark); }
     color: var(--light-green);
 }
 /* Chỉ đích danh đoạn văn trong thẻ dự án để đổi màu */
-.impact-card p {
-    color: #0093cb !important; 
-    font-weight: 600 !important;
-}
