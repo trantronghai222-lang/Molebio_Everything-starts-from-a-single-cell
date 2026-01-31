@@ -435,3 +435,13 @@ h2 { font-size: 2.5rem; margin-bottom: 40px; color: var(--primary-green); }
     color: var(--light-green);
 
 }
+
+/* Chỉ đích danh phần Vươn xa bằng ID */
+#contact { 
+    background-color: #3EBB9E !important; 
+}
+
+/* Thêm màu cho tiêu đề bên trong phần đó cho dễ đọc trên nền xanh mới */
+#contact h2 { 
+    color: var(--primary-dark) !important; 
+}
