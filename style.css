@@ -455,7 +455,7 @@ h2 { font-size: 2.5rem; margin-bottom: 40px; color: var(--primary-green); }
 }
 /* Tùy chỉnh riêng cho các bài viết trong Daily Blog */
 #blog-posts .impact-card {
-    background: #0093cb; /* Nền trắng sạch sẽ */
+    background: #ffffff; /* Nền trắng sạch sẽ */
     border: 1px solid rgba(10, 60, 48, 0.1); /* Viền cực mảnh */
     display: flex;
     flex-direction: column;
