@@ -1,0 +1,26 @@
+<section class="section" style="margin-top: 100px;">
+    <div id="blog-content-area" style="max-width: 800px; margin: 0 auto; text-align: left;">
+        <h1 id="detail-title" style="color: var(--primary-dark);"></h1>
+        <p id="detail-date" style="color: var(--accent-green);"></p>
+        <hr>
+        <img id="detail-img" src="" style="width: 100%; border-radius: 15px; margin: 20px 0; display: none;">
+        <div id="detail-text" style="line-height: 1.8; font-size: 1.1rem;"></div>
+    </div>
+</section>
+
+<script>
+    // Lấy dữ liệu đã lưu từ LocalStorage
+    const data = JSON.parse(localStorage.getItem('currentBlog'));
+
+    if (data) {
+        document.getElementById('detail-title').innerText = data.title;
+        document.getElementById('detail-date').innerText = "Đăng ngày: " + data.date;
+        document.getElementById('detail-text').innerHTML = data.content; // Dùng innerHTML để thêm sticker/icon thoải mái
+        
+        if(data.image) {
+            const img = document.getElementById('detail-img');
+            img.src = data.image;
+            img.style.display = 'block';
+        }
+    }
+</script>
