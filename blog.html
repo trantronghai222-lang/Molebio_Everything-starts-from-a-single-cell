@@ -53,3 +53,35 @@
 </footer>
 </body>
 </html>
+<script>
+    // Kho chứa nội dung các bài blog
+    const blogData = {
+        "blog-1": {
+            title: "Nhật ký Lab: Buổi sáng với vi sinh vật",
+            date: "07/02/2026",
+            content: "Nội dung bài 1: Hôm nay lab rất vui...",
+            image: "assets/img/lab1.jpg"
+        },
+        "blog-2": {
+            title: "Dự án chống hạn hán miền Tây",
+            date: "10/02/2026",
+            content: "Nội dung bài 2: Chúng tôi đã đến Tiền Giang...",
+            image: "assets/img/field-trip.jpg"
+        }
+    };
+
+    // Hàm khi click vào "Đọc thêm"
+    function xemBlog(id) {
+        localStorage.setItem('currentBlog', JSON.stringify(blogData[id]));
+        window.location.href = 'blog-detail.html';
+    }
+</script>
+<article class="impact-card">
+    <h3>Nhật ký Lab...</h3>
+    <a href="javascript:void(0)" onclick="xemBlog('blog-1')" class="read-more-btn">Đọc thêm</a>
+</article>
+
+<article class="impact-card">
+    <h3>Dự án chống hạn hán...</h3>
+    <a href="javascript:void(0)" onclick="xemBlog('blog-2')" class="read-more-btn">Đọc thêm</a>
+</article>
