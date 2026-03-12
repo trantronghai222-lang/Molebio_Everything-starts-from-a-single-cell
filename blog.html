@@ -26,33 +26,9 @@
 
 <section class="section" style="margin-top: 80px;">
     <h2>Daily Blog</h2>
-    <div class="grid" id="blog-posts">
-        <article class="impact-card" style="text-align: left;">
-            <span class="date">07/02/2026</span>
-            <h3>Nhật ký Lab: Buổi sáng với vi sinh vật</h3>
-            <p>Hôm nay chúng tôi đã quan sát thấy sự phát triển vượt bậc của mẫu cây đối chứng...</p>
-            
-            <a href="blog-detail-01.html" class="read-more-btn">Đọc thêm</a>
-        </article>
-    </div>
+    <div class="grid" id="blog-posts"></div>
 </section>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
-<footer class="footer-section">
-    <div class="container">
-        <div class="logo white">
-            <img src="assets/img/619092936_25447345694967110_1532795051963747594_n-removebg-preview.png" class="logo-img" alt="Mole-Bio">
-            <span>Mole-Bio</span>
-        </div>
-        <p>Lan tỏa tri thức sinh học phân tử đến cộng đồng.</p>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Mole-Bio. All rights reserved.</p>
-        </div>
-    </div>
-</footer>
-</body>
-</html>
 <script>
     // Kho chứa nội dung các bài blog
     const blogData = {
@@ -75,13 +51,42 @@
         localStorage.setItem('currentBlog', JSON.stringify(blogData[id]));
         window.location.href = 'blog-detail.html';
     }
-</script>
-<article class="impact-card">
-    <h3>Nhật ký Lab...</h3>
-    <a href="javascript:void(0)" onclick="xemBlog('blog-1')" class="read-more-btn">Đọc thêm</a>
-</article>
 
-<article class="impact-card">
-    <h3>Dự án chống hạn hán...</h3>
-    <a href="javascript:void(0)" onclick="xemBlog('blog-2')" class="read-more-btn">Đọc thêm</a>
-</article>
+    // Render các blog posts từ dữ liệu
+    function renderBlogs() {
+        const blogPostsContainer = document.getElementById('blog-posts');
+        
+        Object.entries(blogData).forEach(([key, blog]) => {
+            const article = document.createElement('article');
+            article.className = 'impact-card';
+            article.style.textAlign = 'left';
+            article.innerHTML = `
+                <span class="date">${blog.date}</span>
+                <h3>${blog.title}</h3>
+                <p>${blog.content}</p>
+                <a href="javascript:void(0)" onclick="xemBlog('${key}')" class="read-more-btn">Đọc thêm</a>
+            `;
+            blogPostsContainer.appendChild(article);
+        });
+    }
+
+    // Gọi hàm khi trang load
+    document.addEventListener('DOMContentLoaded', renderBlogs);
+</script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+<footer class="footer-section">
+    <div class="container">
+        <div class="logo white">
+            <img src="assets/img/619092936_25447345694967110_1532795051963747594_n-removebg-preview.png" class="logo-img" alt="Mole-Bio">
+            <span>Mole-Bio</span>
+        </div>
+        <p>Lan tỏa tri thức sinh học phân tử đến cộng đồng.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mole-Bio. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
