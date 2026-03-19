@@ -29,50 +29,18 @@
     <div class="grid" id="blog-posts"></div>
 </section>
 
-<script>
-    // Kho chứa nội dung các bài blog
-    const blogData = {
-        "blog-1": {
-            title: "DNA – Cuốn sách bạn mang theo từ khi chưa kịp chào đời",
-            date: "17/03/2026",
-            content: "Bạn đã bao giờ soi gương rồi bất chợt nhận ra đôi mắt mình giống hệt bố ....",
-            image: "assets/img/lab1.jpg"
-        },
-        "blog-2": {
-            title: "Dự án chống hạn hán miền Tây",
-            date: "10/02/2026",
-            content: "Nội dung bài 2: Chúng tôi đã đến Tiền Giang...",
-            image: "assets/img/field-trip.jpg"
-        }
-    };
+<section class="section" style="margin-top: 80px;">
+    <h2>Daily Blog</h2>
+    <div class="grid" id="blog-posts">
+        <article class="impact-card" style="text-align: left;">
+            <span class="date">07/02/2026</span>
+            <h3>Nhật ký Lab: Buổi sáng với vi sinh vật</h3>
+            <p>Hôm nay chúng tôi đã quan sát thấy sự phát triển vượt bậc của mẫu cây đối chứng...</p>
+            <a href="blog-detail.html" style="color: #0093cb;">Đọc thêm →</a>
+        </article>
 
-    // Hàm khi click vào "Đọc thêm"
-    function xemBlog(id) {
-        localStorage.setItem('currentBlog', JSON.stringify(blogData[id]));
-        window.location.href = 'blog-detail.html';
-    }
-
-    // Render các blog posts từ dữ liệu
-    function renderBlogs() {
-        const blogPostsContainer = document.getElementById('blog-posts');
-        
-        Object.entries(blogData).forEach(([key, blog]) => {
-            const article = document.createElement('article');
-            article.className = 'impact-card';
-            article.style.textAlign = 'left';
-            article.innerHTML = `
-                <span class="date">${blog.date}</span>
-                <h3>${blog.title}</h3>
-                <p>${blog.content}</p>
-                <a href="javascript:void(0)" onclick="xemBlog('${key}')" class="read-more-btn">Đọc thêm</a>
-            `;
-            blogPostsContainer.appendChild(article);
-        });
-    }
-
-    // Gọi hàm khi trang load
-    document.addEventListener('DOMContentLoaded', renderBlogs);
-</script>
+        </div>
+</section>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
