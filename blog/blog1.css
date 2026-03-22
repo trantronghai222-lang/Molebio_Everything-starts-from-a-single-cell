@@ -1,1 +1,121 @@
+/* RESET MẶC ĐỊNH */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+/* NỀN TOÀN TRANG (Phía sau khung mờ) */
+.glass-background {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0a5c4e; /* Màu nền xanh ngọc đậm */
+    
+    /* NẾU CÓ ẢNH THÌ XÓA DẤU /* Ở 2 DÒNG DƯỚI ĐỂ HIỆN ẢNH */
+    /* background-image: url('ten-anh-cua-ban.jpg'); */
+    /* background-size: cover; background-position: center; */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* CÁI KHUNG KÍNH MỜ CHỨA NỘI DUNG */
+.glass-card {
+    display: flex;
+    width: 100%;
+    max-width: 1100px; /* Tăng độ rộng lên một chút để chứa đoạn văn dài */
+    gap: 50px; /* Khoảng cách giữa cột trái và phải */
+    
+    /* MA THUẬT KÍNH MỜ Ở ĐÂY */
+    background: rgba(255, 255, 255, 0.05); /* Nền trắng cực nhạt */
+    backdrop-filter: blur(20px);           /* Làm mờ hậu cảnh */
+    -webkit-backdrop-filter: blur(20px);   /* Dành cho trình duyệt Safari */
+    
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Viền sáng mờ */
+    border-radius: 20px; /* Bo góc tròn trịa */
+    padding: 50px;
+    color: white; /* Chữ màu trắng */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); /* Đổ bóng làm nổi card */
+}
+
+/* ĐỊNH DẠNG CỘT TRÁI (BÀI VIẾT) */
+.card-left {
+    flex: 1.5; /* Cho cột trái to hơn cột phải một chút để chứa chữ */
+}
+
+.card-left h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+/* Định dạng riêng cho tên khoa học */
+.scientific-name {
+    font-size: 2.8rem; /* Độ lớn của chữ */
+    font-weight: 300;  /* Làm nét chữ mảnh lại cho sang trọng */
+    letter-spacing: 1px; /* Khoảng cách giữa các chữ cái rộng ra một chút */
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-family: "Times New Roman", Times, serif; /* Font có chân thường dùng trong văn bản khoa học */
+}
+
+.scientific-name i {
+    font-style: italic; /* Đảm bảo chữ luôn in nghiêng */
+}
+.card-left .tagline {
+    font-size: 1.1rem;
+    font-weight: bold;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+.card-left .description {
+    font-size: 1rem;
+    line-height: 1.6; /* Giãn dòng để đoạn văn dài dễ đọc hơn */
+    opacity: 0.8;
+    margin-bottom: 30px;
+    text-align: justify; /* Căn đều 2 bên cho văn bản phẳng phiu */
+}
+
+/* ĐỊNH DẠNG ICON */
+.social-icons a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin-right: 20px;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+.social-icons a:hover { opacity: 1; }
+
+/* ĐỊNH DẠNG CỘT PHẢI (MENU) */
+.card-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Căn menu vào giữa theo chiều dọc */
+}
+
+.link-list {
+    list-style: none;
+}
+
+.link-list li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 15px 0;
+}
+
+.link-list li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: block;
+    transition: 0.3s;
+}
+
+.link-list li a:hover {
+    padding-left: 10px;
+    opacity: 0.7;
+}
