@@ -113,7 +113,42 @@
     display: block;
     transition: 0.3s;
 }
+/* Style cho Hashtag */
+.hashtags {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
 
+.hashtags span {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    margin-right: 8px;
+    color: #a7ffeb; /* Màu xanh neon nhẹ cho nổi bật */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.hashtags span:hover {
+    background: rgba(167, 255, 235, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Style cho Nguồn trích dẫn */
+.source {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    border-left: 3px solid #a7ffeb;
+    padding-left: 15px;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.source i {
+    margin-right: 5px;
+}
 .link-list li a:hover {
     padding-left: 10px;
     opacity: 0.7;
