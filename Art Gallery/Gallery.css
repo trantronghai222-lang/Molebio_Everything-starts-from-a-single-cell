@@ -1,1 +1,114 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
+body {
+    background: #000;
+    min-height: 100vh;
+    overflow: hidden; /* Tránh cuộn trang vì đã có hiệu ứng mờ toàn màn hình */
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* HIỆU ỨNG NỀN MỜ ĐỘNG */
+.bg-blur {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(60px) brightness(0.4); /* Độ mờ cực cao để làm nền */
+    transition: background-image 0.8s ease-in-out;
+    z-index: -1;
+    transform: scale(1.1); /* Tránh lộ viền trắng khi blur */
+}
+
+.gallery-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.glass-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    width: 100%;
+    max-width: 1000px;
+    padding: 40px;
+    position: relative;
+    color: white;
+}
+
+/* NÚT QUAY LẠI */
+.back-home {
+    position: absolute;
+    top: 20px; left: 30px;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.back-home:hover { color: white; }
+
+/* HIỂN THỊ ẢNH */
+.main-display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.image-box {
+    flex: 1;
+    height: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.2);
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Giữ nguyên tỉ lệ ảnh không bị cắt */
+    transition: opacity 0.3s ease;
+}
+
+/* NÚT BẤM DI CHUYỂN */
+.nav-btn {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    color: white;
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.nav-btn:hover { background: rgba(255,255,255,0.3); transform: scale(1.1); }
+
+/* THÔNG TIN DƯỚI ẢNH */
+.image-info {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.date-tag {
+    font-size: 0.85rem;
+    color: #a7ffeb;
+    background: rgba(167, 255, 235, 0.1);
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+#img-title {
+    margin: 15px 0 10px;
+    font-size: 1.8rem;
+}
+
+#img-desc {
+    opacity: 0.7;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
