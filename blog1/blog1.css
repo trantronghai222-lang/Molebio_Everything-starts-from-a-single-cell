@@ -12,9 +12,9 @@
     /* background-color: #0a5c4e; /* Màu nền xanh ngọc đậm */ */
     
     /* NẾU CÓ ẢNH THÌ XÓA DẤU /* Ở 2 DÒNG DƯỚI ĐỂ HIỆN ẢNH */
-    /* background-image: url('blog1/blog1.jpg'); 
-    background-size: cover; background-position: center; 
-     */
+    background-image: url('blog1/blog1.jpg');
+    background-size: cover; background-position: center;
+    
     display: flex;
     justify-content: center;
     align-items: center;
