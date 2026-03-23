@@ -12,6 +12,10 @@
     <div id="dynamic-bg" class="bg-blur"></div>
 
     <div class="gallery-wrapper">
+        <div class="category-menu">
+    <button class="cat-btn active" onclick="switchCategory('tiensi')">Nhánh Tiến sĩ (17)</button>
+    <button class="cat-btn" onclick="switchCategory('chuonchuon')">Nhánh Chuồn chuồn (13)</button>
+</div>
         <div class="glass-container">
             
             <a href="../index.html" class="back-home"><i class="fas fa-arrow-left"></i> Quay lại</a>
@@ -42,33 +46,22 @@
 
     <script>
         // DỮ LIỆU ẢNH CỦA BẠN (Thay đổi ở đây)
-        const images = [
-            {
-                src: "anh1.jpg", 
-                title: "Mẫu Vi Khuẩn E.Coli", 
-                date: "10/02/2026", 
-                desc: "Quan sát dưới kính hiển vi quang học độ phóng đại 1000x."
-            },
-            {
-                src: "anh2.jpg", 
-                title: "Phòng Thí Nghiệm Sinh Học", 
-                date: "22/02/2026", 
-                desc: "Buổi thực hành tách chiết DNA từ tế bào thực vật."
-            },
-            {
-                src: "anh3.jpg", 
-                title: "Kết Quả Điện Di", 
-                date: "05/03/2026", 
-                desc: "Các vạch DNA hiện lên rõ nét sau khi chạy điện di gel agarose."
-            }
-        ];
+        const galleryData = {
+    "tiensi": [
+        { src: "ts1.jpg", title: "Tiến sĩ A", date: "10/03/2026", desc: "Mô tả ảnh 1 về tiến sĩ..." },
+        // ... Thêm đủ 17 ảnh vào đây
+        { src: "ts17.jpg", title: "Tiến sĩ Z", date: "12/03/2026", desc: "Mô tả ảnh 17..." }
+    ],
+    "chuonchuon": [
+        { src: "cc1.jpg", title: "Chuồn chuồn kim", date: "15/03/2026", desc: "Mô tả ảnh 1 về chuồn chuồn..." },
+        // ... Thêm đủ 13 ảnh vào đây
+        { src: "cc13.jpg", title: "Chuồn chuồn ngô", date: "18/03/2026", desc: "Mô tả ảnh 13..." }
+    ]
+};
 
-        let currentIndex = 0;
-
-        function updateGallery() {
-            const imgElement = document.getElementById('current-img');
-            const bgElement = document.getElementById('dynamic-bg');
-            const data = images[currentIndex];
+let currentCategory = "tiensi"; // Mặc định hiện nhánh Tiến sĩ trước
+let currentIndex = 0;
+let images = galleryData[currentCategory]; // Lấy danh sách ảnh của nhánh hiện tại
 
             // Hiệu ứng mờ dần khi đổi ảnh
             imgElement.style.opacity = 0;
