@@ -12,8 +12,8 @@
     /* background-color: #0a5c4e; /* Màu nền xanh ngọc đậm */ */
     
     /* NẾU CÓ ẢNH THÌ XÓA DẤU /* Ở 2 DÒNG DƯỚI ĐỂ HIỆN ẢNH */
-    /* background-image: url('ten-anh-cua-ban.jpg'); */
-    /* background-size: cover; background-position: center; */
+    background-image: url('blog1/blog1.jpg');
+    background-size: cover; background-position: center;
     
     display: flex;
     justify-content: center;
@@ -26,8 +26,15 @@
 .glass-card {
     display: flex;
     width: 100%;
+    backdrop-filter: blur(20px);           /* LÀM MỜ NỀN */
     max-width: 1100px; /* Tăng độ rộng lên một chút để chứa đoạn văn dài */
     gap: 50px; /* Khoảng cách giữa cột trái và phải */
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05); /* Nền trắng trong suốt */
+    border-radius: 20px;
+    padding: 50px;
+    color: white;
     
     /* MA THUẬT KÍNH MỜ Ở ĐÂY */
     background: rgba(255, 255, 255, 0.05); /* Nền trắng cực nhạt */
