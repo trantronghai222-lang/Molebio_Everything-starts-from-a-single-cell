@@ -19,12 +19,15 @@
             <div class="main-display">
                 <button class="nav-btn prev" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></button>
                 
-                <div class="image-box">
-                    <img id="current-img" src="anh1.jpg" alt="Gallery Image">
-                </div>
+                <div class="image-box" onclick="openLightbox()">
+    <img id="current-img" src="anh1.jpg" alt="Gallery Image">
+    <div class="hover-hint"><i class="fas fa-search-plus"></i> Click để phóng to</div>
+</div>
 
                 <button class="nav-btn next" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></button>
             </div>
+            <div class="thumb-bar" id="thumb-bar">
+    </div>
 
             <div class="image-info">
                 <div class="info-header">
@@ -90,5 +93,9 @@
         // Khởi tạo lần đầu
         updateGallery();
     </script>
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close-btn">&times;</span>
+    <img id="lightbox-img">
+</div>
 </body>
 </html>
