@@ -171,3 +171,53 @@
     padding-left: 10px;
     opacity: 0.7;
 }
+/* Khối bao quanh 2 ảnh */
+.side-images {
+    margin-bottom: 30px; /* Tạo khoảng cách để đẩy phần link xuống dưới */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Khoảng cách giữa 2 khung ảnh */
+}
+
+/* Từng khung chứa ảnh */
+.img-item {
+    position: relative; /* Để làm mốc cho khung nguồn ảnh hiện lên */
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden; /* Cắt ảnh thừa nếu ảnh quá to */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.img-item:hover {
+    transform: translateY(-5px); /* Hiệu ứng nổi lên nhẹ khi di chuột */
+}
+
+.img-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Khung nhỏ hiện nguồn ảnh (Source) */
+.img-source {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7); /* Nền tối để nổi bật link */
+    color: #fff;
+    font-size: 11px;
+    padding: 5px 10px;
+    text-align: center;
+    opacity: 0; /* Mặc định ẩn đi */
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(5px); /* Hiệu ứng mờ nền khung nguồn */
+}
+
+/* Khi đưa chuột vào ảnh thì hiện nguồn */
+.img-item:hover .img-source {
+    opacity: 1;
+}
