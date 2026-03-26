@@ -96,24 +96,6 @@
     flex-direction: column;
     justify-content: center; /* Căn menu vào giữa theo chiều dọc */
 }
-<div class="card-right">
-    <div class="side-images">
-        <div class="img-item">
-            <img src="anh-dna-1.jpg" alt="DNA Structure">
-            <div class="img-source">Nguồn: nature.com</div>
-        </div>
-
-        <div class="img-item">
-            <img src="anh-dna-2.jpg" alt="Lab Research">
-            <div class="img-source">Nguồn: sciencedirect.com</div>
-        </div>
-    </div>
-
-    <ul class="link-list">
-        <li><a href="#">Bio</a></li>
-        <li><a href="#">Concept Store</a></li>
-        </ul>
-</div>
 
 .link-list {
     list-style: none;
