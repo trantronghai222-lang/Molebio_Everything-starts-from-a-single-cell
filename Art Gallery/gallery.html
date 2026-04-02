@@ -45,56 +45,96 @@
     </div>
 
     <script>
-        // DỮ LIỆU ẢNH CỦA BẠN (Thay đổi ở đây)
-        const galleryData = {
-    "tiensi": [
-        { src: "ts1.jpg", title: "Tiến sĩ A", date: "10/03/2026", desc: "Mô tả ảnh 1 về tiến sĩ..." },
-        // ... Thêm đủ 17 ảnh vào đây
-        { src: "ts17.jpg", title: "Tiến sĩ Z", date: "12/03/2026", desc: "Mô tả ảnh 17..." }
-    ],
-    "chuonchuon": [
-        { src: "a bunch of pp.jpg", title: "Chuồn chuồn kim", date: "15/03/2026", desc: "Mô tả ảnh 1 về chuồn chuồn..." },
-        { src: "chị di.jpg", title: "Chuồn chuồn kim", date: "15/03/2026", desc: "Mô tả ảnh 1 về chuồn chuồn..." },
-        { src: "cô thảo nè.jpg", title: "Chuồn chuồn kim", date: "15/03/2026", desc: "Mô tả ảnh 1 về chuồn chuồn..." },
-        { src: "tim.jpg", title: "Chuồn chuồn kim", date: "15/03/2026", desc: "Mô tả ảnh 1 về chuồn chuồn..." },
-        { src: "dụng cụ.jpg", title: "Chuồn chuồn kim", date: "15/03/2026", desc: "Mô tả ảnh 1 về chuồn chuồn..." },
-         {src: "tim in progress.jpg", title: "Chuồn chuồn kim", date: "15/03/2026", desc: "Mô tả ảnh 1 về chuồn chuồn..." },
-        // ... Thêm đủ 13 ảnh vào đây
-        { src: "cc13.jpg", title: "Chuồn chuồn ngô", date: "18/03/2026", desc: "Mô tả ảnh 13..." }
-    ]
-};
+    // 1. DỮ LIỆU ẢNH
+    const galleryData = {
+        "tiensi": [
+            { src: "../ts1.jpg", title: "Tiến sĩ A", date: "10/03/2026", desc: "Mô tả ảnh 1 về tiến sĩ..." },
+            { src: "../ts17.jpg", title: "Tiến sĩ Z", date: "12/03/2026", desc: "Mô tả ảnh 17..." }
+            // Lưu ý: Tôi thêm "../" vì ảnh của bạn thường nằm ngoài thư mục Art Gallery
+        ],
+        "chuonchuon": [
+            { src: "../a bunch of pp.jpg", title: "Chuồn chuồn kim", date: "15/03/2026", desc: "Mô tả ảnh 1 về chuồn chuồn..." },
+            { src: "../chị di.jpg", title: "Chị Di", date: "15/03/2026", desc: "Mô tả ảnh 2 về chuồn chuồn..." },
+            { src: "../cô thảo nè.jpg", title: "Cô Thảo", date: "15/03/2026", desc: "Mô tả ảnh 3 về chuồn chuồn..." },
+            { src: "../tim.jpg", title: "Tim", date: "15/03/2026", desc: "Mô tả ảnh 4 về chuồn chuồn..." },
+            { src: "../dụng cụ.jpg", title: "Dụng cụ", date: "15/03/2026", desc: "Mô tả ảnh 5 về chuồn chuồn..." },
+            { src: "../tim in progress.jpg", title: "Tim đang làm", date: "15/03/2026", desc: "Mô tả ảnh 6 về chuồn chuồn..." },
+            { src: "../cc13.jpg", title: "Chuồn chuồn ngô", date: "18/03/2026", desc: "Mô tả ảnh cuối..." }
+        ]
+    };
 
-let currentCategory = "tiensi"; // Mặc định hiện nhánh Tiến sĩ trước
-let currentIndex = 0;
-let images = galleryData[currentCategory]; // Lấy danh sách ảnh của nhánh hiện tại
+    let currentCategory = "tiensi"; 
+    let currentIndex = 0;
+    let images = galleryData[currentCategory];
 
-            // Hiệu ứng mờ dần khi đổi ảnh
-            imgElement.style.opacity = 0;
-            
-            setTimeout(() => {
-                imgElement.src = data.src;
-                bgElement.style.backgroundImage = `url('${data.src}')`;
-                document.getElementById('img-title').innerText = data.title;
-                document.getElementById('img-date').innerHTML = `<i class="far fa-calendar-alt"></i> ${data.date}`;
-                document.getElementById('img-desc').innerText = data.desc;
-                imgElement.style.opacity = 1;
-            }, 300);
-        }
+    // 2. HÀM CẬP NHẬT GIAO DIỆN
+    function updateGallery() {
+        const imgElement = document.getElementById('current-img');
+        const bgElement = document.getElementById('dynamic-bg');
+        const data = images[currentIndex];
 
-        function changeImage(step) {
-            currentIndex += step;
-            if (currentIndex >= images.length) currentIndex = 0;
-            if (currentIndex < 0) currentIndex = images.length - 1;
-            updateGallery();
-        }
+        if(!data) return; // Phòng lỗi nếu mảng rỗng
 
-        // Khởi tạo lần đầu
+        imgElement.style.opacity = 0;
+        
+        setTimeout(() => {
+            imgElement.src = data.src;
+            bgElement.style.backgroundImage = `url('${data.src}')`;
+            document.getElementById('img-title').innerText = data.title;
+            document.getElementById('img-date').innerHTML = `<i class="far fa-calendar-alt"></i> ${data.date}`;
+            document.getElementById('img-desc').innerText = data.desc;
+            imgElement.style.opacity = 1;
+
+            // Làm sáng thumbnail đang chọn
+            const thumbs = document.querySelectorAll('.thumb-bar img');
+            thumbs.forEach((t, i) => t.className = i === currentIndex ? 'active' : '');
+        }, 300);
+    }
+
+    // 3. HÀM CHUYỂN NHÁNH (Tiến sĩ <-> Chuồn chuồn)
+    function switchCategory(cat) {
+        currentCategory = cat;
+        images = galleryData[currentCategory];
+        currentIndex = 0;
+        
+        // Đổi trạng thái nút bấm
+        document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
+        event.currentTarget.classList.add('active');
+
+        renderThumbnails();
         updateGallery();
-    </script>
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <span class="close-btn">&times;</span>
-    <img id="lightbox-img">
-</div>
-    <script src="gallery.js"></script>
+    }
+
+    // 4. HÀM TẠO ẢNH NHỎ
+    function renderThumbnails() {
+        const thumbBar = document.getElementById('thumb-bar');
+        thumbBar.innerHTML = ""; 
+        images.forEach((img, index) => {
+            const thumb = document.createElement('img');
+            thumb.src = img.src;
+            thumb.onclick = () => { currentIndex = index; updateGallery(); };
+            thumbBar.appendChild(thumb);
+        });
+    }
+
+    function changeImage(step) {
+        currentIndex = (currentIndex + step + images.length) % images.length;
+        updateGallery();
+    }
+
+    // 5. LIGHTBOX
+    function openLightbox() {
+        document.getElementById('lightbox-img').src = images[currentIndex].src;
+        document.getElementById('lightbox').style.display = "flex";
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').style.display = "none";
+    }
+
+    // KHỞI TẠO LẦN ĐẦU
+    renderThumbnails();
+    updateGallery();
+</script>
 </body>
 </html>
