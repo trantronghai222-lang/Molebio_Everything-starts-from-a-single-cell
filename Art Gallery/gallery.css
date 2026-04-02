@@ -213,3 +213,30 @@ body {
     font-weight: bold;
     box-shadow: 0 0 15px rgba(167, 255, 235, 0.5);
 }
+.card {
+    background: rgba(255, 255, 255, 0.1); /* Độ trong suốt thấp */
+    backdrop-filter: blur(15px); /* Làm mờ background */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Viền kính siêu mỏng */
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Đổ bóng tạo độ nổi */
+}
+.folder-item {
+    transition: all 0.3s ease; /* Giúp chuyển động mượt mà */
+}
+
+.folder-item:hover {
+    transform: translateY(-10px) scale(1.05); /* Bay lên và to ra một chút */
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6); /* Phát sáng màu Neon */
+    filter: brightness(1.2); /* Tăng độ sáng */
+}
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
