@@ -60,3 +60,14 @@ function renderThumbnails() {
 // Gọi render lần đầu
 renderThumbnails();
 updateGallery();
+function switchCategory(cat, e) { // Thêm e ở đây
+    currentCategory = cat;
+    images = galleryData[currentCategory];
+    currentIndex = 0;
+    
+    document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
+    e.currentTarget.classList.add('active'); // Dùng e thay vì event
+
+    renderThumbnails();
+    updateGallery();
+}
